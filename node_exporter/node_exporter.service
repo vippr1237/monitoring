@@ -1,0 +1,11 @@
+[Unit]
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5s
+ExecStart=/opt/node_exporter/node_exporter-1.7.0.linux-amd64/node_exporter
+[Install]
+WantedBy=multi-user.target
